@@ -9,17 +9,13 @@ import Center from "../components/utils/Center";
 import AuthChecker from "../components/auth/AuthChecker";
 
 import { theme } from "./theme";
+import "./App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      if (user) {
-        console.info("User detected.");
-      } else {
-        console.info("No user detected");
-      }
       setLoading(false);
     });
   }, []);
